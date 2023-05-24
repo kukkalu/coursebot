@@ -49,6 +49,8 @@ from Crypto.Cipher import AES
 from Crypto.Util.Padding import unpad
 from base64 import b64encode, b64decode
 
+
+token = "eyJhbGciOiJIUzM4NCIsInR5cCI6IkpXVCJ9.eyJpZCI6OTIwMTY0NDAsIm9yZ0lkIjoiNTA1MTEiLCJ0eXBlIjoxLCJtb2JpbGUiOiI5MTYzMDM2MDUyMzAiLCJuYW1lIjoiSGRoZGhzaiIsImVtYWlsIjpudWxsLCJpc0ludGVybmF0aW9uYWwiOjAsImRlZmF1bHRMYW5ndWFnZSI6IkVOIiwiY291bnRyeUNvZGUiOiJJTiIsImNvdW50cnlJU08iOiI5MSIsInRpbWV6b25lIjoiR01UKzU6MzAiLCJpc0RpeSI6ZmFsc2UsImZpbmdlcnByaW50SWQiOiIxMjM0NTY3ODkwMCIsImlhdCI6MTY4NDY4ODAwMywiZXhwIjoxNjg1MjkyODAzfQ.WSzlGa1vp8BD6F_wz_1hoMtC4UEgZylhGWI3gPK4yp-LFyeZl-NhumaXZO0hijl-"
 @bot.on_message(filters.command(["cpd"])&  ~filters.edited)
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text("Send txt file**")
@@ -109,7 +111,7 @@ async def account_login(bot: Client, m: Message):
 
     
     try:
-        for i in range(arg, len(links)):
+        for i in range(arg, min(len(links), len(links)+arg)):
             
             url = links[i][1]
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@","").replace("*","").replace(".","").strip()
@@ -198,6 +200,6 @@ async def account_login(bot: Client, m: Message):
                 await m.reply_text(f"**downloading failed ❌**\n{str(e)}\n**Name** - {name}\n**Link** - `{url}` & `{url1}`")
                 continue 
     except Exception as e:
-        await m.reply_text(e)
-        pass
+    await m.reply_text(str(e))
+    
     await m.reply_text("Done")          
