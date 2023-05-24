@@ -142,7 +142,7 @@ async def account_login(bot: Client, m: Message):
 
                 
             else:
-                url1 = url
+                print("⚽⚽⚽") 
             print("❤❤❤❤")
             name = f'{str(count).zfill(3)}) {name1}'    
             Show = f"**Downloading:-**\n\n**Name :-** `{name}`\n\n**Url :-** `{url1}`"
