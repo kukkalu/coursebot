@@ -137,12 +137,12 @@ async def account_login(bot: Client, m: Message):
                 a = response.json()['url']
                 print(a)
                 print("❤❤❤")
-                a =url
+                a =url1
 
 
                 
             else:
-                print("⚽⚽⚽") 
+                url1 = url
             print("❤❤❤❤")
             name = f'{str(count).zfill(3)}) {name1}'    
             Show = f"**Downloading:-**\n\n**Name :-** `{name}`\n\n**Url :-** `{url1}`"
