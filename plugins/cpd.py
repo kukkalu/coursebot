@@ -135,7 +135,7 @@ async def account_login(bot: Client, m: Message):
                 response = requests.get('https://api.classplusapp.com/cams/uploader/video/jw-signed-url', headers=headers, params=params)
                 # print(response.json())
                 a = response.json()['url']
-                # print(a)
+                print(a)
                 print("❤❤❤")
 
 
