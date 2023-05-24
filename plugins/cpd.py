@@ -137,25 +137,12 @@ async def account_login(bot: Client, m: Message):
                 a = response.json()['url']
                 print(a)
                 print("❤❤❤")
+                a =url
 
-
-                headers1 = {
-                    'User-Agent': 'ExoPlayerDemo/1.4.37.1 (Linux;Android 11) ExoPlayerLib/2.14.1',
-                    'Accept-Encoding': 'gzip',
-                    'Host': 'cdn.jwplayer.com',
-                    'Connection': 'Keep-Alive',
-                }
-
-
-                response1 = requests.get(f'{a}', headers=headers1)
-                print(response1) 
-
-                url1 = (response1.text).split("\n")[2]
-                print(url1) 
-            else:
-                url1 = url
 
                 
+            else:
+                url1 = url
             print("❤❤❤❤")
             name = f'{str(count).zfill(3)}) {name1}'    
             Show = f"**Downloading:-**\n\n**Name :-** `{name}`\n\n**Url :-** `{url1}`"
