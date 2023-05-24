@@ -148,8 +148,10 @@ async def account_login(bot: Client, m: Message):
 
 
                 response1 = requests.get(f'{a}', headers=headers1)
+                print(response1) 
 
                 url1 = (response1.text).split("\n")[2]
+                print(url1) 
             else:
                 url1 = url
 
